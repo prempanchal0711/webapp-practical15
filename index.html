@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Deployed Page</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<h1>Student Performance</h1>
+<p id="today"></p>
+<button onclick="showMessage()">Click for Message</button>
+<p id="message"></p>
+
+<div style="width: 600px;">
+  <canvas id="myChart"></canvas>
+</div>
+
+<script>
+document.getElementById("today").innerText = "Today's date: " + new Date().toDateString();
+
+function showMessage() {
+    document.getElementById("message").innerText = "This page is deployed on GitHub Pages.";
+}
+
+new Chart(document.getElementById("myChart"), {
+    type: "pie",
+    data: {
+        labels: ["Maths", "Science", "English", "Computer"],
+        datasets: [{
+            label: "Marks",
+            data: [70, 85, 65, 90],
+            backgroundColor: ["red", "blue", "orange", "green"]
+        }]
+    }
+});
+</script>
+</body>
+</html>
